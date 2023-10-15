@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231015 17:49:33.932" rpa="false" schemaversion="4">
+<suite id="s1" name="Test 2" source="C:\Users\KEAM IVAN\Sample\Tests\test_2.robot">
+<test id="s1-t1" name="Test Case 1" line="11">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://elementalselenium.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231015 17:49:34.115" level="INFO">Opening browser 'Chrome' to base url 'https://elementalselenium.com/'.</msg>
+<status status="PASS" starttime="20231015 17:49:34.114" endtime="20231015 17:49:36.387"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231015 17:49:36.388" endtime="20231015 17:49:36.516"/>
+</kw>
+<kw name="Select Window">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Test-2}[h-link]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 17:49:36.517" level="INFO">Clicking element 'css:.home-link'.</msg>
+<status status="PASS" starttime="20231015 17:49:36.517" endtime="20231015 17:49:36.827"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<msg timestamp="20231015 17:49:36.963" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231015 17:49:36.963" level="FAIL">Window with last index is same as the current window.</msg>
+<status status="FAIL" starttime="20231015 17:49:36.827" endtime="20231015 17:49:36.968"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${Test-2}[el]</arg>
+<arg>The Tips</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" starttime="20231015 17:49:36.968" endtime="20231015 17:49:36.968"/>
+</kw>
+<status status="FAIL" starttime="20231015 17:49:36.516" endtime="20231015 17:49:36.968"/>
+</kw>
+<status status="FAIL" starttime="20231015 17:49:34.114" endtime="20231015 17:49:36.968">Window with last index is same as the current window.</status>
+</test>
+<status status="FAIL" starttime="20231015 17:49:33.933" endtime="20231015 17:49:36.969"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test 2">Test 2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
