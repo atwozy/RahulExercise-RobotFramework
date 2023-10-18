@@ -1,6 +1,7 @@
 *** Settings ***
 Resource                ../Library/lib.robot
 Library    String
+Library                  SeleniumLibrary
 
 *** Variables ***
 ${element}                css:.content-block.stick-to-footer

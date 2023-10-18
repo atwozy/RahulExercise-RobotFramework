@@ -1,0 +1,19 @@
+Shop:
+  web-l: "css:.wpb_column.vc_column_container.vc_col-sm-4.vc_col-has-fill>div>div>h3"
+
+Gen: 
+  web-l: "css:.vc_row.wpb_row.vc_row-fluid.uf-row.vc_custom_1631736222382>div>div>div>div>div>div>div>h3>a"
+
+T3:
+  username: "css:#user-name"
+  pass: "css:#password"
+  lg-btn: "css:#login-button"
+  logo: "css:.app_logo"
+  dropdown-mn: "css:select.product_sort_container"
+  error-message: "css:.error-message-container.error"
+
+  #Test 2
+Test-2:
+    h-link: "css:.home-link"
+    el: "css:.tips-wrapper>h1"
+    paragraph: "css://div[@class='cards-container'][2]//div[@class='card']//p[1]"

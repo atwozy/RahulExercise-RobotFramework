@@ -1,24 +1,27 @@
 *** Settings ***
+#Test Setup    Open first browser
+Test Setup    Open second browser
+Test Teardown    Close Browser
 Resource                ../Library/lib.robot
 
 
 *** Test Cases ***
 Test Case 1
-    Open Browser    https://spreecommerce.org/    Chrome
+    #Open Browser    https://spreecommerce.org/    Chrome
     Maximize Browser Window
     Verify List Element
 Test Case 2
-    Open Browser    https://spreecommerce.org/    Chrome
+    #Open Browser    https://spreecommerce.org/    Chrome
     Maximize Browser Window
     Verify Element    Vue Storefront 2
 
 Test Case 3
-    Open Browser    https://www.saucedemo.com/    Chrome
+    #Open Browser    https://www.saucedemo.com/    Chrome
     Maximize Browser Window
     Verify Login Error Message                Epic sadface: Password is required
 
 Test Case 4
-    Open Browser    https://www.saucedemo.com/    Chrome
+    #Open Browser    https://www.saucedemo.com/    Chrome
     Maximize Browser Window
     Select Dropdown 
     
@@ -56,7 +59,7 @@ Verify Login Error Message
     Should Be Equal As Strings    ${em}    ${errormessage}
 
 Select Dropdown
-    Input Text    ${T3}[username]   standard_user
+    Input Text    ${T3}[username]   ${dd-username}
     Input Text    ${T3}[pass]   secret_sauce
     Click Element    ${T3}[lg-btn]
     Wait Until Element Is Visible    ${T3}[logo]
