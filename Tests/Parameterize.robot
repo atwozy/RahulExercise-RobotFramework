@@ -8,7 +8,7 @@ Resource                ../Library/lib.robot
 
 *** Test Cases ***    username    password
 Valid credentials    ${dd-username}    ${dd-password}    
-Invalid username    456789    ${dd-password}
+Invalid username    165488545454    ${dd-password}
 Invalid Password    ${dd-username}   asdfg 
 Characters          @#$%^&%^       @#$%^&
 
