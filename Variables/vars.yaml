@@ -17,3 +17,12 @@ Test-2:
     h-link: "css:.home-link"
     el: "css:.tips-wrapper>h1"
     paragraph: "css://div[@class='cards-container'][2]//div[@class='card']//p[1]"
+
+
+Shops:
+  small: "//*[@class='sc-bj2vay-1 hcyKTa']/label/span"
+  products: "css:.sc-uhudcz-0.iZZGui>div>button"
+  i-cart: "css:.sc-1h98xa9-2.fMfPui"
+  x-btn: "css://*[@class='sc-11uohgb-0 hDmOrM']/button"
+  #empty: "css:.sc-7th5t8-0.jehOnP>p"
+  empty: "css:.sc-1h98xa9-3.VLMSP"

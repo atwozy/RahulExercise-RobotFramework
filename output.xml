@@ -1,220 +1,271 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231018 22:11:10.034" rpa="false" schemaversion="4">
-<suite id="s1" name="Parameterize" source="C:\Users\KEAM IVAN\Sample\Tests\Parameterize.robot">
-<test id="s1-t1" name="Valid credentials" line="10">
-<kw name="Open second browser" library="lib" type="SETUP">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231020 01:17:49.798" rpa="false" schemaversion="4">
+<suite id="s1" name="Shops" source="c:\Users\KEAM IVAN\Sample\Tests\Shops.robot">
+<test id="s1-t1" name="Add all small sizes" line="6">
+<kw name="Open shop site" library="lib" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.saucedemo.com/</arg>
+<arg>https://react-shopping-cart-67954.firebaseapp.com/</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231018 22:11:10.460" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<status status="PASS" starttime="20231018 22:11:10.459" endtime="20231018 22:11:13.912"/>
+<msg timestamp="20231020 01:17:50.152" level="INFO">Opening browser 'Chrome' to base url 'https://react-shopping-cart-67954.firebaseapp.com/'.</msg>
+<status status="PASS" starttime="20231020 01:17:50.152" endtime="20231020 01:17:53.092"/>
 </kw>
-<status status="PASS" starttime="20231018 22:11:10.459" endtime="20231018 22:11:13.912"/>
-</kw>
-<kw name="Test Case 1">
-<arg>${dd-username}</arg>
-<arg>${dd-password}</arg>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231018 22:11:13.919" endtime="20231018 22:11:15.002"/>
+<status status="PASS" starttime="20231020 01:17:53.092" endtime="20231020 01:17:53.215"/>
 </kw>
-<kw name="Login to the browser">
-<arg>${username}</arg>
-<arg>${password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${T3}[username]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:15.006" level="INFO">Typing text 'standard_user' into text field 'css:#user-name'.</msg>
-<status status="PASS" starttime="20231018 22:11:15.005" endtime="20231018 22:11:15.174"/>
+<status status="PASS" starttime="20231020 01:17:50.151" endtime="20231020 01:17:53.215"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${T3}[pass]</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:15.175" level="INFO">Typing text 'secret_sauce' into text field 'css:#password'.</msg>
-<status status="PASS" starttime="20231018 22:11:15.174" endtime="20231018 22:11:15.290"/>
+<kw name="Add Small Products">
+<arg>${c-size}</arg>
+<arg>${addToCart}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${sizes}</var>
+<arg>${Shops}[small]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231020 01:17:53.234" level="INFO">${sizes} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2dbed99ccb56821e9be1944fed962428", element="F638315518B5345BB597EE2A758E60D5_element_19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement...</msg>
+<status status="PASS" starttime="20231020 01:17:53.217" endtime="20231020 01:17:53.234"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${count}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231020 01:17:53.236" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20231020 01:17:53.235" endtime="20231020 01:17:53.236"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{sizes}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2dbed99ccb56821e9be1944fed962428", element="F638315518B5345BB597EE2A758E60D5_element_19")&gt;</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${size}' == '${element.text}'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20231020 01:17:53.237" endtime="20231020 01:17:53.258"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231020 01:17:53.260" level="INFO">${count} = 2</msg>
+<status status="PASS" starttime="20231020 01:17:53.259" endtime="20231020 01:17:53.260"/>
+</kw>
+<status status="PASS" starttime="20231020 01:17:53.237" endtime="20231020 01:17:53.261"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2dbed99ccb56821e9be1944fed962428", element="F638315518B5345BB597EE2A758E60D5_element_22")&gt;</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${size}' == '${element.text}'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20231020 01:17:53.280" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20231020 01:17:53.261" endtime="20231020 01:17:53.281"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231020 01:17:53.281" endtime="20231020 01:17:53.282"/>
+</kw>
+<status status="PASS" starttime="20231020 01:17:53.261" endtime="20231020 01:17:53.282"/>
+</iter>
+<status status="PASS" starttime="20231020 01:17:53.236" endtime="20231020 01:17:53.282"/>
+</for>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class='sc-bj2vay-1 hcyKTa'][${count}]/label/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231020 01:17:53.283" level="INFO">Clicking element '//*[@class='sc-bj2vay-1 hcyKTa'][2]/label/span'.</msg>
+<status status="PASS" starttime="20231020 01:17:53.283" endtime="20231020 01:17:53.444"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>00:03</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231020 01:17:56.444" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231020 01:17:53.444" endtime="20231020 01:17:56.444"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${prod}</var>
+<arg>${Shops}[products]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231020 01:17:56.463" level="INFO">${prod} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2dbed99ccb56821e9be1944fed962428", element="F638315518B5345BB597EE2A758E60D5_element_49")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement...</msg>
+<status status="PASS" starttime="20231020 01:17:56.446" endtime="20231020 01:17:56.463"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${count}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231020 01:17:56.466" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20231020 01:17:56.464" endtime="20231020 01:17:56.466"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{prod}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2dbed99ccb56821e9be1944fed962428", element="F638315518B5345BB597EE2A758E60D5_element_49")&gt;</var>
+<if>
+<branch type="IF" condition="'${bt}' == '${element.text}'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.sc-uhudcz-0.iZZGui&gt;div:nth-child(${count})&gt;button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231020 01:17:56.481" level="INFO">Clicking element 'css:.sc-uhudcz-0.iZZGui&gt;div:nth-child(1)&gt;button'.</msg>
+<status status="PASS" starttime="20231020 01:17:56.480" endtime="20231020 01:17:56.552"/>
+</kw>
+<status status="PASS" starttime="20231020 01:17:56.466" endtime="20231020 01:17:56.553"/>
+</branch>
+<status status="PASS" starttime="20231020 01:17:56.466" endtime="20231020 01:17:56.553"/>
+</if>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231020 01:17:56.554" level="INFO">${count} = 2</msg>
+<status status="PASS" starttime="20231020 01:17:56.554" endtime="20231020 01:17:56.555"/>
+</kw>
+<status status="PASS" starttime="20231020 01:17:56.466" endtime="20231020 01:17:56.555"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2dbed99ccb56821e9be1944fed962428", element="F638315518B5345BB597EE2A758E60D5_element_56")&gt;</var>
+<if>
+<branch type="IF" condition="'${bt}' == '${element.text}'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.sc-uhudcz-0.iZZGui&gt;div:nth-child(${count})&gt;button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231020 01:17:56.583" level="INFO">Clicking element 'css:.sc-uhudcz-0.iZZGui&gt;div:nth-child(2)&gt;button'.</msg>
+<status status="PASS" starttime="20231020 01:17:56.582" endtime="20231020 01:17:56.680"/>
+</kw>
+<status status="PASS" starttime="20231020 01:17:56.556" endtime="20231020 01:17:56.680"/>
+</branch>
+<status status="PASS" starttime="20231020 01:17:56.556" endtime="20231020 01:17:56.680"/>
+</if>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231020 01:17:56.681" level="INFO">${count} = 3</msg>
+<status status="PASS" starttime="20231020 01:17:56.681" endtime="20231020 01:17:56.683"/>
+</kw>
+<status status="PASS" starttime="20231020 01:17:56.555" endtime="20231020 01:17:56.683"/>
+</iter>
+<status status="PASS" starttime="20231020 01:17:56.466" endtime="20231020 01:17:56.683"/>
+</for>
+<status status="PASS" starttime="20231020 01:17:53.216" endtime="20231020 01:17:56.683"/>
+</kw>
+<kw name="Close cart">
+<kw name="Sleep" library="BuiltIn">
+<arg>00:03</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231020 01:17:59.685" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231020 01:17:56.685" endtime="20231020 01:17:59.685"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${el}</var>
+<arg>${Shops}[i-cart]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231020 01:17:59.702" level="INFO">${el} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2dbed99ccb56821e9be1944fed962428", element="F638315518B5345BB597EE2A758E60D5_element_70")&gt;]</msg>
+<status status="PASS" starttime="20231020 01:17:59.685" endtime="20231020 01:17:59.702"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${el_length}</var>
+<arg>${el}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20231020 01:17:59.703" level="INFO">Length is 1</msg>
+<msg timestamp="20231020 01:17:59.704" level="INFO">${el_length} = 1</msg>
+<status status="PASS" starttime="20231020 01:17:59.703" endtime="20231020 01:17:59.704"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${count}</var>
+<value>${el_length + 1}</value>
+<iter>
+<var name="${count}">0</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${count}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231020 01:17:59.706" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20231020 01:17:59.706" endtime="20231020 01:17:59.707"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${T3}[lg-btn]</arg>
+<arg>//*[@class='sc-11uohgb-0 hDmOrM'][${count}]/button</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:15.291" level="INFO">Clicking element 'css:#login-button'.</msg>
-<status status="PASS" starttime="20231018 22:11:15.290" endtime="20231018 22:11:15.410"/>
+<msg timestamp="20231020 01:17:59.707" level="INFO">Clicking element '//*[@class='sc-11uohgb-0 hDmOrM'][1]/button'.</msg>
+<status status="PASS" starttime="20231020 01:17:59.707" endtime="20231020 01:17:59.771"/>
 </kw>
-<status status="PASS" starttime="20231018 22:11:15.002" endtime="20231018 22:11:15.410"/>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231020 01:17:59.772" level="INFO">${count} = 2</msg>
+<status status="PASS" starttime="20231020 01:17:59.771" endtime="20231020 01:17:59.772"/>
 </kw>
-<status status="PASS" starttime="20231018 22:11:13.919" endtime="20231018 22:11:15.410"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231018 22:11:15.411" endtime="20231018 22:11:17.663"/>
-</kw>
-<status status="PASS" starttime="20231018 22:11:10.457" endtime="20231018 22:11:17.663"/>
-</test>
-<test id="s1-t2" name="Invalid username" line="11">
-<kw name="Open second browser" library="lib" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.saucedemo.com/</arg>
-<arg>Chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231018 22:11:17.666" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<status status="PASS" starttime="20231018 22:11:17.665" endtime="20231018 22:11:21.443"/>
-</kw>
-<status status="PASS" starttime="20231018 22:11:17.665" endtime="20231018 22:11:21.444"/>
-</kw>
-<kw name="Test Case 1">
-<arg>2345678</arg>
-<arg>${dd-password}</arg>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231018 22:11:21.444" endtime="20231018 22:11:21.580"/>
-</kw>
-<kw name="Login to the browser">
-<arg>${username}</arg>
-<arg>${password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${T3}[username]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:21.582" level="INFO">Typing text '2345678' into text field 'css:#user-name'.</msg>
-<status status="PASS" starttime="20231018 22:11:21.581" endtime="20231018 22:11:21.746"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${T3}[pass]</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:21.747" level="INFO">Typing text 'secret_sauce' into text field 'css:#password'.</msg>
-<status status="PASS" starttime="20231018 22:11:21.746" endtime="20231018 22:11:21.855"/>
+<status status="PASS" starttime="20231020 01:17:59.706" endtime="20231020 01:17:59.773"/>
+</iter>
+<iter>
+<var name="${count}">1</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${count}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231020 01:17:59.774" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20231020 01:17:59.773" endtime="20231020 01:17:59.774"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${T3}[lg-btn]</arg>
+<arg>//*[@class='sc-11uohgb-0 hDmOrM'][${count}]/button</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:21.856" level="INFO">Clicking element 'css:#login-button'.</msg>
-<status status="PASS" starttime="20231018 22:11:21.855" endtime="20231018 22:11:21.940"/>
+<msg timestamp="20231020 01:17:59.776" level="INFO">Clicking element '//*[@class='sc-11uohgb-0 hDmOrM'][1]/button'.</msg>
+<status status="PASS" starttime="20231020 01:17:59.774" endtime="20231020 01:17:59.845"/>
 </kw>
-<status status="PASS" starttime="20231018 22:11:21.580" endtime="20231018 22:11:21.941"/>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231020 01:17:59.846" level="INFO">${count} = 2</msg>
+<status status="PASS" starttime="20231020 01:17:59.846" endtime="20231020 01:17:59.846"/>
 </kw>
-<status status="PASS" starttime="20231018 22:11:21.444" endtime="20231018 22:11:21.941"/>
+<status status="PASS" starttime="20231020 01:17:59.773" endtime="20231020 01:17:59.846"/>
+</iter>
+<status status="PASS" starttime="20231020 01:17:59.704" endtime="20231020 01:17:59.847"/>
+</for>
+<status status="PASS" starttime="20231020 01:17:56.684" endtime="20231020 01:17:59.847"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231018 22:11:21.941" endtime="20231018 22:11:24.080"/>
+<kw name="Verify empty cart">
+<arg>${message}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Shops}[empty]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231020 01:17:59.848" endtime="20231020 01:17:59.890"/>
 </kw>
-<status status="PASS" starttime="20231018 22:11:17.664" endtime="20231018 22:11:24.080"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${em}</var>
+<arg>${Shops}[empty]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 01:17:59.923" level="INFO">${em} = 0</msg>
+<status status="PASS" starttime="20231020 01:17:59.890" endtime="20231020 01:17:59.924"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${em}</arg>
+<arg>${label_display}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231020 01:17:59.924" endtime="20231020 01:17:59.924"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${em}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 01:17:59.925" level="INFO">0</msg>
+<status status="PASS" starttime="20231020 01:17:59.925" endtime="20231020 01:17:59.925"/>
+</kw>
+<status status="PASS" starttime="20231020 01:17:59.848" endtime="20231020 01:17:59.925"/>
+</kw>
+<status status="PASS" starttime="20231020 01:17:50.150" endtime="20231020 01:17:59.926"/>
 </test>
-<test id="s1-t3" name="Invalid Password" line="12">
-<kw name="Open second browser" library="lib" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.saucedemo.com/</arg>
-<arg>Chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231018 22:11:24.083" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<status status="PASS" starttime="20231018 22:11:24.082" endtime="20231018 22:11:26.866"/>
-</kw>
-<status status="PASS" starttime="20231018 22:11:24.082" endtime="20231018 22:11:26.866"/>
-</kw>
-<kw name="Test Case 1">
-<arg>standard_user</arg>
-<arg>asdfg</arg>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231018 22:11:26.868" endtime="20231018 22:11:27.003"/>
-</kw>
-<kw name="Login to the browser">
-<arg>${username}</arg>
-<arg>${password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${T3}[username]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:27.004" level="INFO">Typing text 'standard_user' into text field 'css:#user-name'.</msg>
-<status status="PASS" starttime="20231018 22:11:27.003" endtime="20231018 22:11:27.135"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${T3}[pass]</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:27.136" level="INFO">Typing text 'asdfg' into text field 'css:#password'.</msg>
-<status status="PASS" starttime="20231018 22:11:27.135" endtime="20231018 22:11:27.224"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${T3}[lg-btn]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:27.225" level="INFO">Clicking element 'css:#login-button'.</msg>
-<status status="PASS" starttime="20231018 22:11:27.225" endtime="20231018 22:11:27.301"/>
-</kw>
-<status status="PASS" starttime="20231018 22:11:27.003" endtime="20231018 22:11:27.301"/>
-</kw>
-<status status="PASS" starttime="20231018 22:11:26.867" endtime="20231018 22:11:27.301"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231018 22:11:27.302" endtime="20231018 22:11:29.443"/>
-</kw>
-<status status="PASS" starttime="20231018 22:11:24.081" endtime="20231018 22:11:29.444"/>
-</test>
-<test id="s1-t4" name="Characters" line="13">
-<kw name="Open second browser" library="lib" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.saucedemo.com/</arg>
-<arg>Chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231018 22:11:29.447" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<status status="PASS" starttime="20231018 22:11:29.446" endtime="20231018 22:11:32.271"/>
-</kw>
-<status status="PASS" starttime="20231018 22:11:29.446" endtime="20231018 22:11:32.272"/>
-</kw>
-<kw name="Test Case 1">
-<arg>@#$%^&amp;%^</arg>
-<arg>@#$%^&amp;</arg>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231018 22:11:32.274" endtime="20231018 22:11:32.401"/>
-</kw>
-<kw name="Login to the browser">
-<arg>${username}</arg>
-<arg>${password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${T3}[username]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:32.403" level="INFO">Typing text '@#$%^&amp;%^' into text field 'css:#user-name'.</msg>
-<status status="PASS" starttime="20231018 22:11:32.402" endtime="20231018 22:11:32.556"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${T3}[pass]</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:32.557" level="INFO">Typing text '@#$%^&amp;' into text field 'css:#password'.</msg>
-<status status="PASS" starttime="20231018 22:11:32.556" endtime="20231018 22:11:32.663"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${T3}[lg-btn]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231018 22:11:32.664" level="INFO">Clicking element 'css:#login-button'.</msg>
-<status status="PASS" starttime="20231018 22:11:32.663" endtime="20231018 22:11:32.731"/>
-</kw>
-<status status="PASS" starttime="20231018 22:11:32.402" endtime="20231018 22:11:32.731"/>
-</kw>
-<status status="PASS" starttime="20231018 22:11:32.272" endtime="20231018 22:11:32.731"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231018 22:11:32.732" endtime="20231018 22:11:34.877"/>
-</kw>
-<status status="PASS" starttime="20231018 22:11:29.446" endtime="20231018 22:11:34.878"/>
-</test>
-<status status="PASS" starttime="20231018 22:11:10.037" endtime="20231018 22:11:34.880"/>
+<status status="PASS" starttime="20231020 01:17:49.805" endtime="20231020 01:17:59.929"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="Parameterize">Parameterize</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Shops">Shops</stat>
 </suite>
 </statistics>
 <errors>
