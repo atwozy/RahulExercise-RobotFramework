@@ -1,6 +1,6 @@
 *** Settings ***
 Resource    ../Library/lib.robot
-Test Setup    Open shop site
+Suite Setup    Open shop site
 
 *** Test Cases ***
 Add all small sizes
