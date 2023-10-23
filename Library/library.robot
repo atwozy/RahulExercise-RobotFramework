@@ -1,6 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    ../sample/Lib/site-packages/robot/libraries/XML.py
 Variables    ../Variables/variable.yaml
+
 
 *** Variables ***
 ${s-size}    S

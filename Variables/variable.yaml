@@ -4,3 +4,9 @@ Shop:
   x_btn: "//*[@class='sc-11uohgb-0 hDmOrM']/button"
   cart_counter: "//*[@class='sc-1h98xa9-3 VLMSP']"
   c_btn: "//*[@class='sc-1h98xa9-0 gFkyvN']"
+
+Shopping:
+  sizes: "//*[@class='sc-bj2vay-1 hcyKTa']/label/span"
+  products: "//*[@class='sc-124al1g-4 eeXMBo']"
+  add_cart: "//div[@class='sc-uhudcz-0 iZZGui']/div/button"
+  page: "css:.sc-124al1g-2.dwOYCh"

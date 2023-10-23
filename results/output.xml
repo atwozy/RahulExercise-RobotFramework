@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231020 22:25:40.544" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="C:\Users\KEAM IVAN\Sample\Tests">
+<suite id="s1-s1" name="Child Window" source="C:\Users\KEAM IVAN\Sample\Tests\Child_Window.robot">
+<test id="s1-s1-t1" name="Test Case 1" line="12">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://elementalselenium.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 22:25:40.973" level="INFO">Opening browser 'Chrome' to base url 'https://elementalselenium.com/'.</msg>
+<status status="PASS" starttime="20231020 22:25:40.973" endtime="20231020 22:25:44.781"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231020 22:25:44.781" endtime="20231020 22:25:44.908"/>
+</kw>
+<kw name="Select Window">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Test-2}[h-link]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231020 22:25:44.910" level="INFO">Clicking element 'css:.home-link'.</msg>
+<status status="PASS" starttime="20231020 22:25:44.909" endtime="20231020 22:25:45.881"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<msg timestamp="20231020 22:25:46.106" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231020 22:25:46.106" level="FAIL">Window with last index is same as the current window.</msg>
+<status status="FAIL" starttime="20231020 22:25:45.881" endtime="20231020 22:25:46.139"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${Test-2}[el]</arg>
+<arg>The Tips</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" starttime="20231020 22:25:46.140" endtime="20231020 22:25:46.140"/>
+</kw>
+<status status="FAIL" starttime="20231020 22:25:44.909" endtime="20231020 22:25:46.140"/>
+</kw>
+<status status="FAIL" starttime="20231020 22:25:40.971" endtime="20231020 22:25:46.140">Window with last index is same as the current window.</status>
+</test>
+<status status="FAIL" starttime="20231020 22:25:40.578" endtime="20231020 22:25:46.141"/>
+</suite>
+<suite id="s1-s2" name="Functional Test" source="C:\Users\KEAM IVAN\Sample\Tests\Functional_Test.robot">
+<test id="s1-s2-t1" name="Test Case 1" line="9">
+<kw name="Open second browser" library="lib" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.saucedemo.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 22:25:46.155" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg timestamp="20231020 22:25:52.536" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E920C0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153/screenshot</msg>
+<msg timestamp="20231020 22:25:56.642" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E92E40&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153/screenshot</msg>
+<msg timestamp="20231020 22:26:00.729" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E93020&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153/screenshot</msg>
+<msg timestamp="20231020 22:26:04.790" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=49797): Max retries exceeded with url: /session/d278cb4a68a10e167c9e185928178153/screenshot (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E931A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20231020 22:25:46.155" endtime="20231020 22:26:04.792"/>
+</kw>
+<status status="FAIL" starttime="20231020 22:25:46.155" endtime="20231020 22:26:04.792"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<msg timestamp="20231020 22:26:08.900" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E93830&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153</msg>
+<msg timestamp="20231020 22:26:13.000" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E93A40&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153</msg>
+<msg timestamp="20231020 22:26:17.088" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E93CB0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153</msg>
+<status status="PASS" starttime="20231020 22:26:04.793" endtime="20231020 22:26:25.300"/>
+</kw>
+<status status="FAIL" starttime="20231020 22:25:46.153" endtime="20231020 22:26:25.301">Setup failed:
+Execution terminated by signal</status>
+</test>
+<test id="s1-s2-t2" name="Test Case 2" line="13">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20231020 22:26:25.301" endtime="20231020 22:26:25.302">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-t3" name="Test Case 3" line="18">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20231020 22:26:25.303" endtime="20231020 22:26:25.303">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-t4" name="Test Case 4" line="23">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20231020 22:26:25.304" endtime="20231020 22:26:25.304">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20231020 22:25:46.143" endtime="20231020 22:26:25.305"/>
+</suite>
+<suite id="s1-s3" name="Parameterize" source="C:\Users\KEAM IVAN\Sample\Tests\Parameterize.robot">
+<test id="s1-s3-t1" name="Valid credentials" line="10">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20231020 22:26:25.308" endtime="20231020 22:26:25.309">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s3-t2" name="Invalid username" line="11">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20231020 22:26:25.310" endtime="20231020 22:26:25.310">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s3-t3" name="Invalid Password" line="12">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20231020 22:26:25.311" endtime="20231020 22:26:25.311">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s3-t4" name="Characters" line="13">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20231020 22:26:25.313" endtime="20231020 22:26:25.313">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20231020 22:26:25.307" endtime="20231020 22:26:25.315"/>
+</suite>
+<suite id="s1-s4" name="Shopping" source="C:\Users\KEAM IVAN\Sample\Tests\Shopping.robot">
+<test id="s1-s4-t1" name="Shopping" line="7">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20231020 22:26:25.317" endtime="20231020 22:26:25.317">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20231020 22:26:25.316" endtime="20231020 22:26:25.318"/>
+</suite>
+<suite id="s1-s5" name="Shops" source="C:\Users\KEAM IVAN\Sample\Tests\Shops.robot">
+<test id="s1-s5-t1" name="Add all small sizes" line="6">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20231020 22:26:25.322" endtime="20231020 22:26:25.323">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20231020 22:26:25.320" endtime="20231020 22:26:25.324"/>
+</suite>
+<status status="FAIL" starttime="20231020 22:25:40.549" endtime="20231020 22:26:25.325"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="11" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat pass="0" fail="11" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Child Window">Tests.Child Window</stat>
+<stat pass="0" fail="4" skip="0" id="s1-s2" name="Functional Test">Tests.Functional Test</stat>
+<stat pass="0" fail="4" skip="0" id="s1-s3" name="Parameterize">Tests.Parameterize</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s4" name="Shopping">Tests.Shopping</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s5" name="Shops">Tests.Shops</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231020 22:25:52.536" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E920C0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153/screenshot</msg>
+<msg timestamp="20231020 22:25:56.642" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E92E40&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153/screenshot</msg>
+<msg timestamp="20231020 22:26:00.729" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E93020&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153/screenshot</msg>
+<msg timestamp="20231020 22:26:04.790" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=49797): Max retries exceeded with url: /session/d278cb4a68a10e167c9e185928178153/screenshot (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E931A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<msg timestamp="20231020 22:26:08.900" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E93830&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153</msg>
+<msg timestamp="20231020 22:26:13.000" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E93A40&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153</msg>
+<msg timestamp="20231020 22:26:17.088" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F001E93CB0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d278cb4a68a10e167c9e185928178153</msg>
+</errors>
+</robot>

@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../Library/library.robot
 Suite Setup   Open shop site
-Library    ../sample/Lib/site-packages/robot/libraries/XML.py
+
 
 *** Test Cases ***
 Shopping
@@ -25,7 +25,7 @@ Select all small size items
     Click Element    xpath=//*[@class='sc-bj2vay-1 hcyKTa'][${count}]/label/span
     
     #Add small items
-    Sleep    00:03
+    Sleep    00:01
     ${addToCart}=    Get WebElements    ${Shop}[add_cart]
     ${count}=    Set Variable    1
 
@@ -42,7 +42,7 @@ Remove selected items
     ${el_length}=    Get Length    ${get_btn}
     
     #Remove item/s from cart
-    FOR    ${counter}    IN RANGE    ${el_length}   
+    FOR    ${counter}    IN RANGE    ${el_length}       
         ${count}=    Set Variable    1
         Click Element    xpath=//*[@class='sc-11uohgb-0 hDmOrM'][${count}]/button
         ${count}=    Evaluate    ${count}+1
